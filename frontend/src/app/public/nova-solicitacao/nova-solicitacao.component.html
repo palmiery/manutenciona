@@ -1,0 +1,99 @@
+<div class="min-h-screen bg-slate-100 flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl shadow-lg w-full max-w-lg p-8">
+    @if (success()) {
+      <!-- Success State -->
+      <div class="text-center py-8">
+        <span class="text-6xl">✅</span>
+        <h2 class="text-2xl font-bold text-slate-800 mt-4">Solicitação Enviada!</h2>
+        <p class="text-slate-500 mt-2">Sua solicitação foi registrada com sucesso. A equipe responsável entrará em contato.</p>
+        <button
+          (click)="newRequest()"
+          class="mt-6 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Nova Solicitação
+        </button>
+      </div>
+    } @else {
+      <!-- Form -->
+      <div class="mb-6">
+        <div class="flex items-center gap-3 mb-1">
+          <span class="text-2xl">🔧</span>
+          <h1 class="text-2xl font-bold text-slate-800">Nova Solicitação</h1>
+        </div>
+        <p class="text-slate-500 text-sm">Informe o problema para que a equipe possa atendê-lo.</p>
+      </div>
+
+      <form (ngSubmit)="submit()" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Seu Nome *</label>
+          <input [(ngModel)]="form.solicitanteNome" name="nome" type="text" required
+            class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Nome completo" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Contato (e-mail ou telefone)</label>
+          <input [(ngModel)]="form.solicitanteContato" name="contato" type="text"
+            class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Ex: joao@email.com ou (11) 99999-9999" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Título do Problema *</label>
+          <input [(ngModel)]="form.titulo" name="titulo" type="text" required
+            class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Ex: Ar condicionado com barulho" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Descrição *</label>
+          <textarea [(ngModel)]="form.descricao" name="descricao" required
+            class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            rows="4" placeholder="Descreva o problema com detalhes"></textarea>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Sala</label>
+            <select [(ngModel)]="form.salaId" name="sala" (ngModelChange)="onSalaChange()"
+              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option [ngValue]="undefined">Selecione...</option>
+              @for (sala of salas(); track sala.id) {
+                <option [ngValue]="sala.id">{{ sala.nome }}</option>
+              }
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Equipamento</label>
+            <select [(ngModel)]="form.equipamentoId" name="equipamento"
+              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option [ngValue]="undefined">Selecione...</option>
+              @for (eq of equipamentos(); track eq.id) {
+                <option [ngValue]="eq.id">{{ eq.nome }}</option>
+              }
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Prioridade</label>
+          <select [(ngModel)]="form.prioridade" name="prioridade"
+            class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="BAIXA">🟢 Baixa</option>
+            <option value="MEDIA">🟡 Média</option>
+            <option value="ALTA">🔴 Alta</option>
+            <option value="URGENTE">🚨 Urgente</option>
+          </select>
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="loading()"
+          class="w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50 mt-2"
+        >
+          {{ loading() ? 'Enviando...' : 'Enviar Solicitação' }}
+        </button>
+      </form>
+    }
+  </div>
+</div>

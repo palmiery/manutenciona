@@ -1,0 +1,68 @@
+<aside class="flex flex-col w-64 min-h-screen bg-slate-800 text-white">
+  <!-- Logo -->
+  <div class="flex items-center gap-3 px-6 py-5 border-b border-slate-700">
+    <span class="text-2xl">🔧</span>
+    <span class="text-xl font-bold tracking-wide">Manutenciona</span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="flex-1 px-3 py-4 space-y-1">
+    <!-- Início -->
+    <a
+      routerLink="/dashboard/inicio"
+      routerLinkActive="bg-slate-600"
+      class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-700 transition-colors cursor-pointer"
+    >
+      <span class="text-lg">🏠</span>
+      <span class="font-medium">Início</span>
+    </a>
+
+    <!-- Configurações (accordion) -->
+    <div>
+      <button
+        (click)="toggleConfig()"
+        class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-700 transition-colors"
+      >
+        <div class="flex items-center gap-3">
+          <span class="text-lg">⚙️</span>
+          <span class="font-medium">Configurações</span>
+        </div>
+        <span class="text-slate-400 text-sm transition-transform" [class.rotate-180]="configOpen()">
+          ▼
+        </span>
+      </button>
+
+      @if (configOpen()) {
+        <div class="ml-4 mt-1 space-y-1">
+          <a
+            routerLink="/configuracoes/salas"
+            routerLinkActive="bg-slate-600 text-white"
+            class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition-colors text-sm"
+          >
+            <span>🚪</span>
+            <span>Salas</span>
+          </a>
+          <a
+            routerLink="/configuracoes/equipamentos"
+            routerLinkActive="bg-slate-600 text-white"
+            class="flex items-center gap-3 px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition-colors text-sm"
+          >
+            <span>🖥️</span>
+            <span>Equipamentos</span>
+          </a>
+        </div>
+      }
+    </div>
+  </nav>
+
+  <!-- Footer -->
+  <div class="px-6 py-4 border-t border-slate-700">
+    <a
+      routerLink="/nova-solicitacao"
+      class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium transition-colors text-sm"
+    >
+      <span>+</span>
+      <span>Nova Solicitação</span>
+    </a>
+  </div>
+</aside>

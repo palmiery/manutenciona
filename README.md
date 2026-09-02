@@ -1,59 +1,76 @@
-# Manutenciona
+# 🔧 Manutenciona (Monorepo)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.6.
+> Sistema centralizado para acompanhamento, priorização e gestão de solicitações de manutenção em salas e equipamentos.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🎯 Visão do Produto
 
-```bash
-ng serve
+- **Para** gestores operacionais e equipes de manutenção predial/acadêmica
+- **Que** enfrentam desorganização, lentidão e falta de rastreabilidade no atendimento de falhas em infraestruturas e equipamentos
+- **O Manutenciona** é um sistema web de gestão e acompanhamento de chamados de manutenção
+- **Que** centraliza solicitações, prioriza atendimentos e oferece acompanhamento de status em tempo real
+- **Diferente de** controles manuais por planilhas, e-mails ou mensagens informais
+- **Nosso produto** oferece um dashboard intuitivo categorizado por status, integrado ao cadastro de salas/equipamentos e abertura simplificada de chamados.
+
+---
+
+## 👥 Equipe & Processo
+- **Coorte:** 2026.1
+- **Disciplina:** Processos de Software
+- **Quadro de Tarefas (Kanban):** [Acessar GitHub Projects](https://github.com/orgs/seu-usuario/projects/1)
+- **Documentação de Proposta:** [Acessar docs/proposta.md](docs/proposta.md)
+
+---
+
+## 📁 Estrutura do Projeto
+
+```text
+manutenciona/
+├── docs/               # Documentação do projeto (Proposta, Visão, Processos)
+│   └── proposta.md
+├── frontend/           # Aplicação Angular 22 + Tailwind CSS
+│   ├── src/
+│   ├── package.json
+│   └── angular.json
+├── backend/            # API REST Spring Boot 4 + PostgreSQL
+│   ├── src/
+│   ├── pom.xml
+│   └── mvnw
+├── .gitignore          # Gitignore unificado
+└── README.md
+
 ```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## 🚀 Como Executar
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 1. Pré-requisitos
+- **Node.js** (v20+) e **npm**
+- **Java JDK** (v21+)
+- **PostgreSQL** rodando na porta 5432 com banco criado:
+  ```sql
+  CREATE DATABASE manutenciona;
+  ```
 
+---
+
+### 2. Backend (Spring Boot)
+Entre na pasta `backend/` e execute:
 ```bash
-ng generate component component-name
+cd backend
+./mvnw spring-boot:run
 ```
+> A API estará disponível em: `http://localhost:8080`
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
+### 3. Frontend (Angular)
+Em outro terminal, entre na pasta `frontend/` e execute:
 ```bash
-ng generate --help
+cd frontend
+npm install
+npm start
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+> O sistema estará acessível em: `http://localhost:4200`
