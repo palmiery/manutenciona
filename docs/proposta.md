@@ -13,7 +13,7 @@
 
 ---
 
-## 2. Definição do MVP (Escopo)
+## 2. Definição do MVP
 
 ### ✅ Dentro do Escopo
 * **Painel Geral (Dashboard):** Visão consolidada de chamados divididos por status (`PENDENTE`, `EM_ESPERA`, `CONCLUIDO`).
