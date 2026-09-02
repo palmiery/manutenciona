@@ -1,0 +1,18 @@
+<div class="flex min-h-screen bg-slate-100">
+  <!-- Sidebar -->
+  <app-sidebar />
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col">
+    <!-- Top Bar -->
+    <header class="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between">
+      <h1 class="text-lg font-semibold text-slate-700">Sistema de Manutenção</h1>
+      <span class="text-sm text-slate-500">Bem-vindo</span>
+    </header>
+
+    <!-- Page Content -->
+    <main class="flex-1 p-6">
+      <router-outlet />
+    </main>
+  </div>
+</div>
