@@ -16,9 +16,9 @@
 ---
 
 ## 👥 Equipe & Processo
-- **Coorte:** 2026.1
+- **Coorte:** 2026.2
 - **Disciplina:** Processos de Software
-- **Quadro de Tarefas (Kanban):** [Acessar GitHub Projects](https://github.com/orgs/seu-usuario/projects/1)
+- **Quadro de Tarefas (Kanban):** [Acessar GitHub Projects](https://github.com/orgs/palmiery/projects/10)
 - **Documentação de Proposta:** [Acessar docs/proposta.md](docs/proposta.md)
 
 ---

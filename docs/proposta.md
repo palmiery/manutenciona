@@ -31,7 +31,7 @@
 
 ## 3. Backlog Inicial e Histórias de Usuário
 
-*O backlog detalhado e dinâmico encontra-se no [GitHub Projects do Projeto](https://github.com/orgs/seu-usuario/projects/1).*
+*O backlog detalhado e dinâmico encontra-se no [GitHub Projects do Projeto](https://github.com/orgs/palmiery/projects/10).*
 
 | ID | História de Usuário (Resultado) | Estimativa | Prioridade |
 | :--- | :--- | :--- | :--- |
@@ -81,6 +81,6 @@
 
 ## 7. Informações da Apresentação
 
-* **Coorte:** 2026.1
+* **Coorte:** 2026.2
 * **Quadro Kanban:** [Link do GitHub Projects](https://github.com/users/palmiery/projects/10)
 * **Integração:** Projeto desenvolvido para a disciplina de Processos de Software.

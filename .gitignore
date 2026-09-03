@@ -17,3 +17,6 @@ backend/.idea/
 Thumbs.db
 *.swp
 *.bak
+*~
+#*#
+.#*
