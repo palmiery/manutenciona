@@ -8,7 +8,7 @@
 
 - **Para** gestores operacionais e equipes de manutenção predial/acadêmica
 - **Que** enfrentam desorganização, lentidão e falta de rastreabilidade no atendimento de falhas em infraestruturas e equipamentos
-- **O Manutenciona** é um sistema web de gestão e acompanhamento de chamados de manutenção
+- **O Manutenciona** é um sistema web integrado de gestão e acompanhamento de chamados de manutenção
 - **Que** centraliza solicitações, prioriza atendimentos e oferece acompanhamento de status em tempo real
 - **Diferente de** controles manuais por planilhas, e-mails ou mensagens informais
 - **Nosso produto** oferece um dashboard intuitivo categorizado por status, integrado ao cadastro de salas/equipamentos e abertura simplificada de chamados.
@@ -16,10 +16,21 @@
 ---
 
 ## 👥 Equipe & Processo
-- **Coorte:** 2026.2
-- **Disciplina:** Processos de Software
-- **Quadro de Tarefas (Kanban):** [Acessar GitHub Projects](https://github.com/orgs/palmiery/projects/10)
-- **Documentação de Proposta:** [Acessar docs/proposta.md](docs/proposta.md)
+
+* **Disciplina:** DIM0510 — Processos de Software
+* **Coorte:** 2026.2
+* **Integração:** Projeto independente (sem integração com Web II ou Sistemas Móveis)
+* **Quadro de Tarefas (Kanban):** [GitHub Projects #10](https://github.com/users/palmiery/projects/10)
+* **Documentação Completa da Proposta:** [docs/proposta.md](docs/proposta.md)
+* **Vídeo de Apresentação (Sprint 0):** [Assistir no YouTube / Drive](https://youtube.com) *(A ser gravado)*
+
+### Integrantes da Equipe
+
+| Nome do Integrante | Matrícula | Usuário GitHub | Papel no Scrum |
+| :--- | :---: | :---: | :--- |
+| **Allyson Carmo** | 20260001535 | [@AllysonGustavo1](https://github.com/palmiery) | Product Owner / Developer |
+| **Allane Oliveira** | 20230046474 | [@allane-oliveira](https://github.com/allane-oliveira) | Scrum Master / Developer |
+| **Renato Campos** | 20250050779 | [@palmiery](https://github.com/renatocampos) | Developer |
 
 ---
 
@@ -37,12 +48,12 @@ manutenciona/
 │   ├── src/
 │   ├── pom.xml
 │   └── mvnw
+├── docker-compose.yml  # Ambiente do banco de dados PostgreSQL
 ├── .gitignore          # Gitignore unificado
 └── README.md
-
 ```
----
 
+---
 
 ## 🚀 Como Executar
 
@@ -53,6 +64,7 @@ manutenciona/
   ```sql
   CREATE DATABASE manutenciona;
   ```
+  *(Ou execute via Docker Compose: `docker compose up -d`)*
 
 ---
 
