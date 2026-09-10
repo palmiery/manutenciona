@@ -18,17 +18,27 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
 
 ## 2. Definição do MVP
 
-### ✅ Dentro do Escopo
+### 💡 Hipótese de Valor
+> **Acreditamos que** gestores operacionais, técnicos e usuários solicitantes **vão** centralizar 100% dos chamados e acompanhamentos de manutenção pelo sistema web **porque** terão visibilidade imediata do status de cada solicitação, redução drástica no tempo de triagem e histórico rastreável de todas as manutenções realizadas.
+
+### ✅ Dentro do Escopo (MVP)
 * **Painel Geral (Dashboard):** Visão consolidada de chamados divididos por status (`PENDENTE`, `EM_ESPERA`, `CONCLUIDO`).
 * **Gestão de Infraestrutura:** Cadastro, listagem e remoção de Salas e Equipamentos associados.
-* **Abertura de Chamados:** Formulario para registro de novas solicitações com escolha de sala, equipamento, descrição e nível de prioridade.
-* **Gestão do Ciclo de Vida do Chamado:** Alteração de status e prioridade das solicitações pela equipe responsável.
+* **Abertura de Chamados:** Formulário para registro de novas solicitações com seleção de sala, equipamento vinculado, descrição do problema e nível de prioridade inicial.
+* **Gestão do Ciclo de Vida do Chamado:** Alteração de status e prioridade das solicitações pela equipe responsável pela manutenção.
+* **Filtros Básicos:** Filtragem de solicitações por status e sala para otimizar a fila de trabalho.
 
-### ❌ Fora do Escopo
-* Notificações automáticas via e-mail ou SMS.
-* Módulo financeiro ou controle de custos de manutenção.
-* Autenticação avançada e controle de acesso por múltiplos perfis (RBAC complexo).
-* Aplicativo móvel nativo (iOS/Android).
+### ❌ Fora do Escopo (Pós-MVP)
+* Notificações automáticas via e-mail, push ou SMS.
+* Módulo financeiro, controle de estoque de peças e custos de manutenção.
+* Autenticação avançada e controle de acesso por múltiplos perfis hierárquicos (RBAC complexo).
+* Aplicativo móvel nativo (iOS / Android).
+* Relatórios analíticos avançados e exportação de dados para PDF/Excel.
+
+### 🎯 Critérios de Sucesso do MVP
+1. O usuário consegue registrar um chamado em menos de 1 minuto sem auxílio técnico.
+2. O técnico consegue atualizar o status de um chamado e a alteração reflete imediatamente no Dashboard.
+3. Todas as 5 histórias de usuário do backlog inicial implementadas, testadas e validadas ao longo de 4 sprints.
 
 ---
 
