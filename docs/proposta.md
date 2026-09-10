@@ -117,7 +117,7 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
 | :--- | :---: | :---: | :--- |
 | **Allyson Carmo** | 20260001535 | [@palmiery](https://github.com/palmiery) | Product Owner / Developer |
 | **Allane Oliveira** | 20230046474 | [@allane-oliveira](https://github.com/allane-oliveira) | Scrum Master / Developer |
-| **Renato Campos** | 20250050779 | [@renatocampos](https://github.com/renatocampos) | Developer |
+| **Renato Campos** | 20250050779 | [@renatocampos](https://github.com/renatocampos) | Tech Lead / Developer |
 
 ---
 
