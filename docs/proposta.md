@@ -4,12 +4,15 @@
 
 ## 1. Visão do Produto
 
-- **Para** gestores operacionais e equipes de manutenção predial/acadêmica
+- **Para** gestores operacionais e equipes de manutenção predial e acadêmica
 - **Que** enfrentam desorganização, lentidão e falta de rastreabilidade no atendimento de falhas em infraestruturas e equipamentos
-- **O Manutenciona** é um sistema web de gestão e acompanhamento de chamados de manutenção
+- **O Manutenciona** é um sistema web integrado de gestão e acompanhamento de chamados de manutenção
 - **Que** centraliza solicitações, prioriza atendimentos e oferece acompanhamento de status em tempo real
-- **Diferente de** controles manuais por planilhas, e-mails ou mensagens informais
-- **Nosso produto** oferece um dashboard intuitivo categorizado por status, integrado ao cadastro de salas/equipamentos e abertura simplificada de chamados.
+- **Diferente de** controles manuais fragmentados por planilhas, e-mails ou mensagens informais de aplicativo
+- **Nosso produto** oferece um dashboard intuitivo categorizado por status, integrado ao cadastro de salas/equipamentos e com abertura simplificada de chamados.
+
+### 📌 Contextualização e Evidência do Problema
+Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e laboratórios, falhas em equipamentos essenciais (como ar-condicionado, projetores e fiação elétrica) são frequentemente notificadas de maneira informal e não estruturada. Isso provoca perda de histórico, duplicidade de solicitações, falta de transparência sobre quem está trabalhando em cada chamado e atrasos críticos no reparo. O **Manutenciona** resolve esse problema ao fornecer uma plataforma centralizada e de fácil uso onde o usuário final reporta a falha e a equipe técnica realiza a triagem, acompanhamento e resolução de forma clara e mensurável.
 
 ---
 
