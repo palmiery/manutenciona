@@ -44,23 +44,24 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
 
 ## 3. Backlog Inicial e Histórias de Usuário
 
-*O backlog detalhado e dinâmico encontra-se no [GitHub Projects do Projeto](https://github.com/orgs/palmiery/projects/10).*
+*O backlog detalhado, estimado e dinâmico encontra-se no [GitHub Projects do Manutenciona](https://github.com/users/palmiery/projects/10).*
 
-| ID | História de Usuário (Resultado) | Estimativa | Prioridade |
-| :--- | :--- | :--- | :--- |
-| **US01** | Como gestor, quero visualizar o total de chamados em cada status (Pendente, Em Espera, Concluído) no dashboard para acompanhar a carga de trabalho. | 5 pts | Alta |
-| **US02** | Como usuário, quero registrar uma solicitação de manutenção informando sala, equipamento e problema para que a equipe possa resolver. | 3 pts | Alta |
-| **US03** | Como técnico, quero alterar o status e a prioridade de uma solicitação para organizar a fila de atendimento. | 3 pts | Alta |
-| **US04** | Como administrador, quero cadastrar salas e equipamentos para manter a base de ativos atualizada. | 5 pts | Média |
-| **US05** | Como técnico, quero filtrar os chamados por status e sala para otimizar minhas rotas de atendimento. | 2 pts | Média |
+| ID | História de Usuário (Resultado de Valor) | Estimativa | Prioridade |
+| :--- | :--- | :---: | :---: |
+| **US01** | Como gestor, quero visualizar o total de chamados em cada status (Pendente, Em Espera, Concluído) no dashboard para acompanhar a carga de trabalho. | 5 pts | **P1** |
+| **US02** | Como usuário, quero registrar uma solicitação de manutenção informando sala, equipamento e problema para que a equipe possa resolver. | 3 pts | **P1** |
+| **US03** | Como técnico, quero alterar o status e a prioridade de uma solicitação para organizar a fila de atendimento. | 3 pts | **P1** |
+| **US04** | Como administrador, quero cadastrar salas e equipamentos para manter a base de ativos atualizada. | 5 pts | **P2** |
+| **US05** | Como técnico, quero filtrar os chamados por status e sala para otimizar minhas rotas de atendimento. | 2 pts | **P2** |
 
 ---
 
 ## 4. Stack Tecnológico e Justificativa
 
-* **Frontend (Angular + Tailwind CSS):** Escolhido pela arquitetura baseada em componentes, tipagem forte com TypeScript e facilidade na construção de layouts responsivos com Tailwind CSS.
-* **Backend (Spring Boot + Java 21):** Escolhido pelo alto desempenho, ecossistema maduro para criação de APIs REST robustas e integração simples com o banco de dados via Spring Data JPA.
-* **Banco de Dados (PostgreSQL):** Banco relacional confiável para garantir a integridade referencial entre salas, equipamentos e chamados.
+* **Frontend (Angular 22 + Tailwind CSS):** Escolhido pela arquitetura robusta baseada em componentes, tipagem estática e segura com TypeScript, ecossistema completo de formulários reativos e rapidez no desenvolvimento de interfaces limpas e responsivas via Tailwind CSS.
+* **Backend (Spring Boot 4 + Java 21):** Escolhido pelo alto desempenho, estabilidade empresarial, facilidade na modelagem de APIs RESTful e integração com o banco de dados via Spring Data JPA com Hibernate.
+* **Banco de Dados (PostgreSQL):** Banco de dados relacional confiável, ideal para assegurar a integridade referencial entre as entidades (Salas, Equipamentos e Solicitações).
+* **Infraestrutura Local (Docker / Docker Compose):** Utilizado para padronização do ambiente de banco de dados PostgreSQL entre todos os membros da equipe.
 
 ---
 
@@ -95,16 +96,18 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
 
 ## 6. Equipe
 
-| Nome do Integrante | Matrícula | Papel no Scrum |
-| :--- | :--- | :--- |
-| **Allyson Carmo** | 20260001535 | Product Owner / Developer |
-| **Allane Oliveira** | 20230046474 | Scrum Master / Developer |
-| **Renato Campos** | 20250050779 | Developer |
+| Nome do Integrante | Matrícula | Usuário GitHub | Papel no Scrum |
+| :--- | :---: | :---: | :--- |
+| **Allyson Carmo** | 20260001535 | [@palmiery](https://github.com/palmiery) | Product Owner / Developer |
+| **Allane Oliveira** | 20230046474 | [@allane-oliveira](https://github.com/allane-oliveira) | Scrum Master / Developer |
+| **Renato Campos** | 20250050779 | [@renatocampos](https://github.com/renatocampos) | Tech Lead / Developer |
 
 ---
 
 ## 7. Informações da Apresentação
 
-* **Coorte:** 2026.2
-* **Quadro Kanban:** [Link do GitHub Projects](https://github.com/users/palmiery/projects/10)
-* **Integração:** Projeto desenvolvido para a disciplina de Processos de Software.
+* **Coorte de Apresentação:** 2026.2
+* **Disciplina:** DIM0510 - Processos de Software
+* **Integração com outras disciplinas:** Não há integração; trata-se de projeto exclusivo para DIM0510.
+* **Quadro Kanban (GitHub Projects):** [https://github.com/users/palmiery/projects/10](https://github.com/users/palmiery/projects/10)
+* **Vídeo de Apresentação (Sprint 0 - ~5 min):** *(A ser gravado pela equipe)*
