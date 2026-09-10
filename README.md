@@ -16,10 +16,21 @@
 ---
 
 ## 👥 Equipe & Processo
-- **Coorte:** 2026.2
-- **Disciplina:** Processos de Software
-- **Quadro de Tarefas (Kanban):** [Acessar GitHub Projects](https://github.com/orgs/palmiery/projects/10)
-- **Documentação de Proposta:** [Acessar docs/proposta.md](docs/proposta.md)
+
+* **Disciplina:** DIM0510 — Processos de Software
+* **Coorte:** 2026.2
+* **Integração:** Projeto independente (sem integração com Web II ou Sistemas Móveis)
+* **Quadro de Tarefas (Kanban):** [GitHub Projects #10](https://github.com/users/palmiery/projects/10)
+* **Documentação Completa da Proposta:** [docs/proposta.md](docs/proposta.md)
+* **Vídeo de Apresentação (Sprint 0):** *(A ser gravado pela equipe)*
+
+### Integrantes da Equipe
+
+| Nome do Integrante | Matrícula | Usuário GitHub | Papel no Scrum |
+| :--- | :---: | :---: | :--- |
+| **Allyson Carmo** | 20260001535 | [@palmiery](https://github.com/palmiery) | Product Owner / Developer |
+| **Allane Oliveira** | 20230046474 | [@allane-oliveira](https://github.com/allane-oliveira) | Scrum Master / Developer |
+| **Renato Campos** | 20250050779 | [@renatocampos](https://github.com/renatocampos) | Tech Lead / Developer |
 
 ---
 
