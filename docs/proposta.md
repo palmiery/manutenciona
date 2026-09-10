@@ -53,19 +53,30 @@
 
 ## 5. Acordo de Processo
 
-* **Cadência:** Projeto executado em **4 Sprints** de 1 semana cada.
-* **Cerimônias:**
-  * *Sprint Planning:* Início de cada sprint para puxar histórias do Backlog.
-  * *Daily Sync:* Acompanhamento diário assíncrono via grupo da equipe.
-  * *Sprint Review & Retrospective:* Validação dos entregáveis e ajuste contínuo do processo ao final de cada sprint.
+* **Cadência de Sprints:** O projeto será executado em **4 Sprints de 1 semana cada**, iniciando às segundas-feiras e finalizando aos domingos.
+* **Cerimônias do Scrum:**
+  * **Sprint Planning:** Segundas-feiras, às 19h00 (Duração: 45 min). Planejamento das metas, seleção de histórias do Backlog e alocação.
+  * **Daily Sync:** Terça a Sexta-feira, às 12h00 (Duração: 10 min, assíncrono via grupo da equipe). Cada integrante reporta: o que fez, o que fará e se há bloqueios.
+  * **Sprint Review & Retrospectiva:** Domingos, às 20h00 (Duração: 45 min). Demonstração das funcionalidades concluídas, validação da DoD e levantamento de melhorias no processo de trabalho.
 * **Definição de Pronto (Definition of Done - DoD):**
-  1. Código versionado em branch própria e mesclado via Pull Request com revisão de pelo menos 1 membro.
-  2. Funcionalidade testada manualmente no ambiente local (front + back).
-  3. Sem erros no console do navegador ou exceções não tratadas no backend.
-  4. Tarefa atualizada no quadro do GitHub Projects.
-* **WIP Limits (Work in Progress):**
-  * *In Progress:* Máximo de 2 tarefas por desenvolvedor.
-  * *Code Review:* Máximo de 3 tarefas no total da equipe.
+  1. Código versionado em branch descritiva (`feat/...`, `fix/...`, `chore/...`) e mesclado via Pull Request direcionado à branch `develop`.
+  2. Pull Request revisado e aprovado por pelo menos 1 outro desenvolvedor conforme a política de revisão cruzada.
+  3. Funcionalidade testada manualmente no ambiente local (integração Frontend + Backend + Banco).
+  4. Código limpo, sem logs de depuração desnecessários ou erros no console do navegador e backend.
+  5. Card correspondente atualizado e movido para a coluna **Pronto** no GitHub Projects.
+* **Política de Revisão Cruzada de Código (Code Review):**
+  * **Allyson Carmo** revisa os Pull Requests de **Renato Campos**.
+  * **Renato Campos** revisa os Pull Requests de **Allane Oliveira**.
+  * **Allane Oliveira** revisa os Pull Requests de **Allyson Carmo**.
+  *(Em caso de ausência de um membro por mais de 24h, qualquer outro desenvolvedor assume a revisão para não bloquear o fluxo).*
+* **Limites de Trabalho em Progresso (WIP Limits):**
+  * *Sprint Backlog:* Contém os itens selecionados para a sprint corrente.
+  * *Em Progresso:* Máximo de **2 tarefas por desenvolvedor** (limite global: 6 tarefas).
+  * *Em Revisão (Code Review):* Máximo de **3 tarefas simultâneas** para toda a equipe.
+* **Ferramentas Adotadas:**
+  * **Gestão e Versionamento:** GitHub (Repositório, GitHub Projects com Kanban, Issues e Pull Requests).
+  * **Comunicação:** Discord (reuniões síncronas) e WhatsApp (Daily assíncrona e avisos operacionais).
+  * **Ambiente de Desenvolvimento:** Visual Studio Code / IntelliJ IDEA, Git e Docker.
 
 ---
 
