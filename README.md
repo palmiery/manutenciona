@@ -28,9 +28,9 @@
 
 | Nome do Integrante | Matrícula | Usuário GitHub | Papel no Scrum |
 | :--- | :---: | :---: | :--- |
-| **Allyson Carmo** | 20260001535 | [@palmiery](https://github.com/AllysonGustavo1) | Product Owner / Developer |
-| **Allane Oliveira** | 20230046474 | [@allane-oliveira](https://github.com/AllaneE) | Scrum Master / Developer |
-| **Renato Campos** | 20250050779 | [@renatocampos](https://github.com/palmiery) | Tech Lead / Developer |
+| **Allyson Carmo** | 20260001535 | [@AllysonGustavo1](https://github.com/AllysonGustavo1) | Product Owner / Developer |
+| **Allane Emanoelle** | 20230046474 | [@AllaneE](https://github.com/AllaneE) | Scrum Master / Developer |
+| **Renato Campos** | 20250050779 | [@palmiery](https://github.com/palmiery) | Tech Lead / Developer |
 
 ---
 
