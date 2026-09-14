@@ -1,41 +1,42 @@
-# 📋 Proposta do Projeto - Manutenciona
+# Proposta do Projeto - Manutenciona
 
 ---
 
 ## 1. Visão do Produto
 
-- **Para** gestores operacionais e equipes de manutenção predial e acadêmica
-- **Que** enfrentam desorganização, lentidão e falta de rastreabilidade no atendimento de falhas em infraestruturas e equipamentos
-- **O Manutenciona** é um sistema web integrado de gestão e acompanhamento de chamados de manutenção
-- **Que** centraliza solicitações, prioriza atendimentos e oferece acompanhamento de status em tempo real
-- **Diferente de** controles manuais fragmentados por planilhas, e-mails ou mensagens informais de aplicativo
+- **Para** gestores operacionais e equipes de manutenção predial e acadêmica.
+- **Que** enfrentam desorganização, lentidão e falta de rastreabilidade no atendimento de falhas em infraestruturas e equipamentos.
+- **O Manutenciona** é um sistema web integrado de gestão e acompanhamento de chamados de manutenção.
+- **Que** centraliza solicitações, prioriza atendimentos e oferece acompanhamento de status em tempo real.
+- **Diferente de** controles manuais fragmentados por planilhas, e-mails ou mensagens informais de aplicativo.
 - **Nosso produto** oferece um dashboard intuitivo categorizado por status, integrado ao cadastro de salas/equipamentos e com abertura simplificada de chamados.
 
-### 📌 Contextualização e Evidência do Problema
+### Contextualização e Evidência do Problema
 Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e laboratórios, falhas em equipamentos essenciais (como ar-condicionado, projetores e fiação elétrica) são frequentemente notificadas de maneira informal e não estruturada. Isso provoca perda de histórico, duplicidade de solicitações, falta de transparência sobre quem está trabalhando em cada chamado e atrasos críticos no reparo. O **Manutenciona** resolve esse problema ao fornecer uma plataforma centralizada e de fácil uso onde o usuário final reporta a falha e a equipe técnica realiza a triagem, acompanhamento e resolução de forma clara e mensurável.
 
 ---
 
 ## 2. Definição do MVP
 
-### 💡 Hipótese de Valor
+### Hipótese de Valor
 > **Acreditamos que** gestores operacionais, técnicos e usuários solicitantes **vão** centralizar 100% dos chamados e acompanhamentos de manutenção pelo sistema web **porque** terão visibilidade imediata do status de cada solicitação, redução drástica no tempo de triagem e histórico rastreável de todas as manutenções realizadas.
 
-### ✅ Dentro do Escopo (MVP)
+### Dentro do Escopo (MVP)
 * **Painel Geral (Dashboard):** Visão consolidada de chamados divididos por status (`PENDENTE`, `EM_ESPERA`, `CONCLUIDO`).
 * **Gestão de Infraestrutura:** Cadastro, listagem e remoção de Salas e Equipamentos associados.
 * **Abertura de Chamados:** Formulário para registro de novas solicitações com seleção de sala, equipamento vinculado, descrição do problema e nível de prioridade inicial.
+* **Notas de comunicação:** Comunicação entre o solicitante e responsável sobre alguma pendência do chamado, ou seja, algum informativo do chamado.
 * **Gestão do Ciclo de Vida do Chamado:** Alteração de status e prioridade das solicitações pela equipe responsável pela manutenção.
 * **Filtros Básicos:** Filtragem de solicitações por status e sala para otimizar a fila de trabalho.
 
-### ❌ Fora do Escopo (Pós-MVP)
+### Fora do Escopo (Pós-MVP)
 * Notificações automáticas via e-mail, push ou SMS.
 * Módulo financeiro, controle de estoque de peças e custos de manutenção.
 * Autenticação avançada e controle de acesso por múltiplos perfis hierárquicos (RBAC complexo).
 * Aplicativo móvel nativo (iOS / Android).
 * Relatórios analíticos avançados e exportação de dados para PDF/Excel.
 
-### 🎯 Critérios de Sucesso do MVP
+### Critérios de Sucesso do MVP
 1. O usuário consegue registrar um chamado em menos de 1 minuto sem auxílio técnico.
 2. O técnico consegue atualizar o status de um chamado e a alteração reflete imediatamente no Dashboard.
 3. Todas as 5 histórias de usuário do backlog inicial implementadas, testadas e validadas ao longo de 4 sprints.
@@ -99,7 +100,7 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
 | Nome do Integrante | Matrícula | Usuário GitHub | Papel no Scrum |
 | :--- | :---: | :---: | :--- |
 | **Allyson Carmo** | 20260001535 | [@palmiery](https://github.com/palmiery) | Product Owner / Developer |
-| **Allane Oliveira** | 20230046474 | [@allane-oliveira](https://github.com/allane-oliveira) | Scrum Master / Developer |
+| **Allane Oliveira** | 20230046474 | [@AllaneE](https://github.com/AllaneE) | Scrum Master / Developer |
 | **Renato Campos** | 20250050779 | [@renatocampos](https://github.com/renatocampos) | Tech Lead / Developer |
 
 ---
