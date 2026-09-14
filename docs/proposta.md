@@ -99,15 +99,14 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
 
 | Nome do Integrante | Matrícula | Usuário GitHub | Papel no Scrum |
 | :--- | :---: | :---: | :--- |
-| **Allyson Carmo** | 20260001535 | [@palmiery](https://github.com/palmiery) | Product Owner / Developer |
+| **Allyson Carmo** | 20260001535 | [@AllysonGustavo1](https://github.com/AllysonGustavo1)| Product Owner / Developer |
 | **Allane Oliveira** | 20230046474 | [@AllaneE](https://github.com/AllaneE) | Scrum Master / Developer |
-| **Renato Campos** | 20250050779 | [@renatocampos](https://github.com/renatocampos) | Tech Lead / Developer |
+| **Renato Campos** | 20250050779 | [@palmiery](https://github.com/palmiery) | Tech Lead / Developer |
 
 ---
 
 ## 7. Informações da Apresentação
 
-* **Coorte de Apresentação:** 2026.2
 * **Disciplina:** DIM0510 - Processos de Software
 * **Integração com outras disciplinas:** Não há integração; trata-se de projeto exclusivo para DIM0510.
 * **Quadro Kanban (GitHub Projects):** [https://github.com/users/palmiery/projects/10](https://github.com/users/palmiery/projects/10)
