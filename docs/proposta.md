@@ -108,6 +108,7 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
 ## 7. Informações da Apresentação
 
 * **Disciplina:** DIM0510 - Processos de Software
+* Coorte: 2026.2
 * **Integração com outras disciplinas:** Não há integração; trata-se de projeto exclusivo para DIM0510.
 * **Quadro Kanban (GitHub Projects):** [https://github.com/users/palmiery/projects/10](https://github.com/users/palmiery/projects/10)
 * **Vídeo de Apresentação (Sprint 0 - ~5 min):** *(A ser gravado pela equipe)*
