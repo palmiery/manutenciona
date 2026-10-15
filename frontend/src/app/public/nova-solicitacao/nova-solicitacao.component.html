@@ -23,6 +23,14 @@
         <p class="text-slate-500 text-sm">Informe o problema para que a equipe possa atendê-lo.</p>
       </div>
 
+      <!-- Alerta de Erro -->
+      @if (errorMessage()) {
+        <div class="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg flex items-center gap-2">
+          <span>⚠️</span>
+          <span>{{ errorMessage() }}</span>
+        </div>
+      }
+
       <form (ngSubmit)="submit()" class="space-y-4">
         <div>
           <label class="block text-sm font-medium text-slate-700 mb-1">Seu Nome *</label>
@@ -46,28 +54,30 @@
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1">Descrição *</label>
-          <textarea [(ngModel)]="form.descricao" name="descricao" required
+          <label class="block text-sm font-medium text-slate-700 mb-1">Descrição do Defeito (Mín. 10 caracteres) *</label>
+          <textarea [(ngModel)]="form.descricao" name="descricao" required minlength="10"
             class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            rows="4" placeholder="Descreva o problema com detalhes"></textarea>
+            rows="4" placeholder="Descreva o problema com detalhes (mínimo de 10 caracteres)"></textarea>
         </div>
 
         <div class="grid grid-cols-2 gap-4">
           <div>
-            <label class="block text-sm font-medium text-slate-700 mb-1">Sala</label>
-            <select [(ngModel)]="form.salaId" name="sala" (ngModelChange)="onSalaChange()"
+            <label class="block text-sm font-medium text-slate-700 mb-1">Sala *</label>
+            <select [(ngModel)]="form.salaId" name="sala" (ngModelChange)="onSalaChange()" required
               class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option [ngValue]="undefined">Selecione...</option>
+              <option [ngValue]="undefined" disabled>Selecione a sala...</option>
               @for (sala of salas(); track sala.id) {
                 <option [ngValue]="sala.id">{{ sala.nome }}</option>
               }
             </select>
           </div>
           <div>
-            <label class="block text-sm font-medium text-slate-700 mb-1">Equipamento</label>
-            <select [(ngModel)]="form.equipamentoId" name="equipamento"
-              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option [ngValue]="undefined">Selecione...</option>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Equipamento *</label>
+            <select [(ngModel)]="form.equipamentoId" name="equipamento" [disabled]="!form.salaId" required
+              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-slate-100 disabled:text-slate-400">
+              <option [ngValue]="undefined" disabled>
+                {{ form.salaId ? 'Selecione o equipamento...' : 'Primeiro selecione a sala' }}
+              </option>
               @for (eq of equipamentos(); track eq.id) {
                 <option [ngValue]="eq.id">{{ eq.nome }}</option>
               }
@@ -76,8 +86,8 @@
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1">Prioridade</label>
-          <select [(ngModel)]="form.prioridade" name="prioridade"
+          <label class="block text-sm font-medium text-slate-700 mb-1">Prioridade Inicial Sugerida *</label>
+          <select [(ngModel)]="form.prioridade" name="prioridade" required
             class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="BAIXA">🟢 Baixa</option>
             <option value="MEDIA">🟡 Média</option>
