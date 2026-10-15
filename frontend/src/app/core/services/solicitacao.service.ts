@@ -8,9 +8,10 @@ export class SolicitacaoService {
   private http = inject(HttpClient);
   private apiUrl = 'http://localhost:8080/api/solicitacoes';
 
-  getAll(status?: StatusSolicitacao): Observable<Solicitacao[]> {
+  getAll(status?: StatusSolicitacao, salaId?: number): Observable<Solicitacao[]> {
     let params = new HttpParams();
     if (status) params = params.set('status', status);
+    if (salaId) params = params.set('salaId', salaId.toString());
     return this.http.get<Solicitacao[]>(this.apiUrl, { params });
   }
 

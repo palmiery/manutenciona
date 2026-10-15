@@ -28,10 +28,17 @@ public class SolicitacaoService {
     private final EquipamentoRepository equipamentoRepository;
 
     @Transactional(readOnly = true)
-    public List<SolicitacaoDTO> findAll(StatusSolicitacao status) {
-        List<Solicitacao> list = (status != null)
-                ? solicitacaoRepository.findByStatusOrderByCreatedAtDesc(status)
-                : solicitacaoRepository.findAllByOrderByCreatedAtDesc();
+    public List<SolicitacaoDTO> findAll(StatusSolicitacao status, Long salaId) {
+        List<Solicitacao> list;
+        if (status != null && salaId != null) {
+            list = solicitacaoRepository.findByStatusAndSalaIdOrderByCreatedAtDesc(status, salaId);
+        } else if (status != null) {
+            list = solicitacaoRepository.findByStatusOrderByCreatedAtDesc(status);
+        } else if (salaId != null) {
+            list = solicitacaoRepository.findBySalaIdOrderByCreatedAtDesc(salaId);
+        } else {
+            list = solicitacaoRepository.findAllByOrderByCreatedAtDesc();
+        }
         return list.stream().map(SolicitacaoDTO::from).toList();
     }
 
