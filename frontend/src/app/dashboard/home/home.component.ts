@@ -19,23 +19,25 @@ export class HomeComponent implements OnInit {
   loading = signal(true);
 
   ngOnInit() {
-    this.loadDashboard();
+    this.loadDashboardStats();
+    this.loadChamados();
   }
 
-  loadDashboard() {
-    this.loading.set(true);
+  loadDashboardStats() {
     this.solicitacaoService.getDashboardStats().subscribe({
       next: (data) => this.stats.set(data),
-      error: () => console.warn('Backend não disponível — usando dados simulados'),
+      error: () => this.stats.set({ pendentes: 0, emEspera: 0, concluidos: 0, total: 0 }),
     });
+  }
 
+  loadChamados() {
+    this.loading.set(true);
     this.solicitacaoService.getAll().subscribe({
       next: (data) => {
-        this.recentes.set(data.slice(0, 10));
+        this.recentes.set(data);
         this.loading.set(false);
       },
       error: () => {
-        // Dados simulados para desenvolvimento
         this.recentes.set([]);
         this.loading.set(false);
       },
