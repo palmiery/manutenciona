@@ -25,6 +25,7 @@ export class NovaSolicitacaoComponent implements OnInit {
   equipamentos = signal<Equipamento[]>([]);
   loading = signal(false);
   success = signal(false);
+  errorMessage = signal<string>('');
 
   form: SolicitacaoCreate = {
     titulo: '',
@@ -53,16 +54,48 @@ export class NovaSolicitacaoComponent implements OnInit {
   }
 
   submit() {
-    if (!this.form.titulo || !this.form.descricao || !this.form.solicitanteNome) return;
+    if (
+      !this.form.solicitanteNome?.trim() ||
+      !this.form.titulo?.trim() ||
+      !this.form.descricao?.trim() ||
+      !this.form.salaId ||
+      !this.form.equipamentoId ||
+      !this.form.prioridade
+    ) {
+      this.errorMessage.set('Por favor, preencha todos os campos obrigatórios (*).');
+      return;
+    }
+
+    if (this.form.descricao.trim().length < 10) {
+      this.errorMessage.set('A descrição do defeito deve conter pelo menos 10 caracteres.');
+      return;
+    }
+
+    this.errorMessage.set('');
     this.loading.set(true);
     this.solicitacaoService.create(this.form).subscribe({
-      next: () => { this.loading.set(false); this.success.set(true); },
-      error: () => this.loading.set(false),
+      next: () => {
+        this.loading.set(false);
+        this.success.set(true);
+      },
+      error: (err) => {
+        this.loading.set(false);
+        this.errorMessage.set(err?.error?.message ?? 'Erro ao enviar a solicitação. Verifique os dados.');
+      },
     });
   }
 
   newRequest() {
     this.success.set(false);
-    this.form = { titulo: '', descricao: '', solicitanteNome: '', solicitanteContato: '', prioridade: 'MEDIA' };
+    this.errorMessage.set('');
+    this.form = {
+      titulo: '',
+      descricao: '',
+      solicitanteNome: '',
+      solicitanteContato: '',
+      prioridade: 'MEDIA',
+      salaId: undefined,
+      equipamentoId: undefined,
+    };
   }
 }

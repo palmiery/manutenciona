@@ -50,6 +50,10 @@ export class EquipamentosComponent implements OnInit {
   }
 
   save() {
+    if (!this.form.nome?.trim() || !this.form.salaId) {
+      alert('Nome e Sala são campos obrigatórios para cadastrar um equipamento.');
+      return;
+    }
     const id = this.editingId();
     const obs = id
       ? this.equipamentoService.update(id, this.form)

@@ -22,8 +22,10 @@ public class SolicitacaoController {
     private final SolicitacaoService solicitacaoService;
 
     @GetMapping
-    public ResponseEntity<List<SolicitacaoDTO>> findAll(@RequestParam(required = false) StatusSolicitacao status) {
-        return ResponseEntity.ok(solicitacaoService.findAll(status));
+    public ResponseEntity<List<SolicitacaoDTO>> findAll(
+            @RequestParam(required = false) StatusSolicitacao status,
+            @RequestParam(required = false) Long salaId) {
+        return ResponseEntity.ok(solicitacaoService.findAll(status, salaId));
     }
 
     @GetMapping("/dashboard")

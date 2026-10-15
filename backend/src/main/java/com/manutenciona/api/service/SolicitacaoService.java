@@ -28,10 +28,17 @@ public class SolicitacaoService {
     private final EquipamentoRepository equipamentoRepository;
 
     @Transactional(readOnly = true)
-    public List<SolicitacaoDTO> findAll(StatusSolicitacao status) {
-        List<Solicitacao> list = (status != null)
-                ? solicitacaoRepository.findByStatusOrderByCreatedAtDesc(status)
-                : solicitacaoRepository.findAllByOrderByCreatedAtDesc();
+    public List<SolicitacaoDTO> findAll(StatusSolicitacao status, Long salaId) {
+        List<Solicitacao> list;
+        if (status != null && salaId != null) {
+            list = solicitacaoRepository.findByStatusAndSalaIdOrderByCreatedAtDesc(status, salaId);
+        } else if (status != null) {
+            list = solicitacaoRepository.findByStatusOrderByCreatedAtDesc(status);
+        } else if (salaId != null) {
+            list = solicitacaoRepository.findBySalaIdOrderByCreatedAtDesc(salaId);
+        } else {
+            list = solicitacaoRepository.findAllByOrderByCreatedAtDesc();
+        }
         return list.stream().map(SolicitacaoDTO::from).toList();
     }
 
@@ -82,11 +89,17 @@ public class SolicitacaoService {
         Solicitacao solicitacao = solicitacaoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Solicitação não encontrada com id: " + id));
 
-        solicitacao.setStatus(dto.status());
-        if (dto.status() == StatusSolicitacao.CONCLUIDO) {
-            solicitacao.setResolvedAt(LocalDateTime.now());
-        } else {
-            solicitacao.setResolvedAt(null);
+        if (dto.status() != null) {
+            solicitacao.setStatus(dto.status());
+            if (dto.status() == StatusSolicitacao.CONCLUIDO) {
+                solicitacao.setResolvedAt(LocalDateTime.now());
+            } else {
+                solicitacao.setResolvedAt(null);
+            }
+        }
+
+        if (dto.prioridade() != null) {
+            solicitacao.setPrioridade(dto.prioridade());
         }
 
         return SolicitacaoDTO.from(solicitacaoRepository.save(solicitacao));
