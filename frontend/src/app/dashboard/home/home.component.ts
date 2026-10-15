@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SolicitacaoService } from '../../core/services/solicitacao.service';
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
   loadDashboard() {
     this.solicitacaoService.getDashboardStats().subscribe({
       next: (data) => this.stats.set(data),
-      error: () => console.warn('Backend não disponível — usando dados simulados'),
+      error: () => this.stats.set({ pendentes: 0, emEspera: 0, concluidos: 0, total: 0 }),
     });
   }
 

@@ -42,11 +42,11 @@ public class EquipamentoService {
 
     @Transactional
     public EquipamentoDTO create(EquipamentoCreateDTO dto) {
-        Sala sala = null;
-        if (dto.salaId() != null) {
-            sala = salaRepository.findById(dto.salaId())
-                    .orElseThrow(() -> new RuntimeException("Sala não encontrada com id: " + dto.salaId()));
+        if (dto.salaId() == null) {
+            throw new IllegalArgumentException("O equipamento deve obrigatoriamente estar vinculado a uma sala.");
         }
+        Sala sala = salaRepository.findById(dto.salaId())
+                .orElseThrow(() -> new RuntimeException("Sala não encontrada com id: " + dto.salaId()));
 
         Equipamento equipamento = Equipamento.builder()
                 .nome(dto.nome())
@@ -63,11 +63,11 @@ public class EquipamentoService {
         Equipamento equipamento = equipamentoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Equipamento não encontrado com id: " + id));
 
-        Sala sala = null;
-        if (dto.salaId() != null) {
-            sala = salaRepository.findById(dto.salaId())
-                    .orElseThrow(() -> new RuntimeException("Sala não encontrada com id: " + dto.salaId()));
+        if (dto.salaId() == null) {
+            throw new IllegalArgumentException("O equipamento deve obrigatoriamente estar vinculado a uma sala.");
         }
+        Sala sala = salaRepository.findById(dto.salaId())
+                .orElseThrow(() -> new RuntimeException("Sala não encontrada com id: " + dto.salaId()));
 
         equipamento.setNome(dto.nome());
         equipamento.setDescricao(dto.descricao());

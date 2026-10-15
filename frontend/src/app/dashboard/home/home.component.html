@@ -134,23 +134,103 @@
     } @else {
       <div class="divide-y divide-slate-100">
         @for (item of recentes(); track item.id) {
-          <div class="px-6 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
-            <div class="flex items-center gap-4">
-              <span class="text-xs text-slate-400 font-mono">#{{ item.id }}</span>
+          <div class="px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50 transition-colors">
+            <div class="flex items-start gap-4">
+              <span class="text-xs text-slate-400 font-mono mt-0.5">#{{ item.id }}</span>
               <div>
-                <p class="text-sm font-medium text-slate-700">{{ item.titulo }}</p>
-                <p class="text-xs text-slate-400 mt-0.5">
-                  {{ item.salaNome ?? 'Sem sala' }} • {{ item.solicitanteNome }}
+                <p class="text-sm font-medium text-slate-800">{{ item.titulo }}</p>
+                <p class="text-xs text-slate-500 mt-0.5">
+                  Sala: <span class="font-medium text-slate-700">{{ item.salaNome ?? 'Não vinculada' }}</span> • 
+                  Equipamento: <span class="font-medium text-slate-700">{{ item.equipamentoNome ?? 'Nenhum' }}</span> • 
+                  Solicitante: <span class="font-medium text-slate-700">{{ item.solicitanteNome }}</span>
                 </p>
+                <p class="text-xs text-slate-400 mt-1 line-clamp-1">{{ item.descricao }}</p>
               </div>
             </div>
-            <div class="flex items-center gap-3">
+
+            <div class="flex items-center gap-3 self-end md:self-center">
+              <span
+                class="px-2 py-0.5 rounded text-xs font-semibold"
+                [ngClass]="{
+                  'bg-green-100 text-green-700': item.prioridade === 'BAIXA',
+                  'bg-yellow-100 text-yellow-700': item.prioridade === 'MEDIA',
+                  'bg-red-100 text-red-700': item.prioridade === 'ALTA' || item.prioridade === 'URGENTE'
+                }"
+              >
+                {{ item.prioridade }}
+              </span>
+
               <app-badge-status [status]="item.status" />
-              <span class="text-xs text-slate-400">{{ item.createdAt | date:'dd/MM/yyyy' }}</span>
+
+              <button
+                (click)="openQuickEdit(item)"
+                class="px-3 py-1 text-xs border border-slate-300 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors font-medium"
+              >
+                Atender / Editar
+              </button>
             </div>
           </div>
         }
       </div>
     }
   </div>
+
+  <!-- Modal de Edição Rápida (US03) -->
+  @if (editingSolicitacao()) {
+    <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+      <div class="bg-white rounded-xl p-6 w-full max-w-md shadow-xl">
+        <h3 class="text-lg font-semibold text-slate-800 mb-1">
+          Edição Rápida #{{ editingSolicitacao()?.id }}
+        </h3>
+        <p class="text-xs text-slate-500 mb-4">{{ editingSolicitacao()?.titulo }}</p>
+
+        <div class="space-y-4">
+          <!-- Status -->
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Alterar Status</label>
+            <select
+              [ngModel]="novoStatus()"
+              (ngModelChange)="novoStatus.set($event)"
+              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="PENDENTE">⏳ Pendente</option>
+              <option value="EM_ESPERA">🔄 Em Espera</option>
+              <option value="CONCLUIDO">✅ Concluído</option>
+            </select>
+          </div>
+
+          <!-- Prioridade -->
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Alterar Prioridade</label>
+            <select
+              [ngModel]="novaPrioridade()"
+              (ngModelChange)="novaPrioridade.set($event)"
+              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="BAIXA">🟢 Baixa</option>
+              <option value="MEDIA">🟡 Média</option>
+              <option value="ALTA">🔴 Alta</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-6">
+          <button
+            (click)="saveQuickEdit()"
+            [disabled]="savingEdit()"
+            class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm disabled:opacity-50"
+          >
+            {{ savingEdit() ? 'Salvando...' : 'Salvar Alterações' }}
+          </button>
+          <button
+            (click)="closeQuickEdit()"
+            [disabled]="savingEdit()"
+            class="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors text-sm"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  }
 </div>
