@@ -82,11 +82,17 @@ public class SolicitacaoService {
         Solicitacao solicitacao = solicitacaoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Solicitação não encontrada com id: " + id));
 
-        solicitacao.setStatus(dto.status());
-        if (dto.status() == StatusSolicitacao.CONCLUIDO) {
-            solicitacao.setResolvedAt(LocalDateTime.now());
-        } else {
-            solicitacao.setResolvedAt(null);
+        if (dto.status() != null) {
+            solicitacao.setStatus(dto.status());
+            if (dto.status() == StatusSolicitacao.CONCLUIDO) {
+                solicitacao.setResolvedAt(LocalDateTime.now());
+            } else {
+                solicitacao.setResolvedAt(null);
+            }
+        }
+
+        if (dto.prioridade() != null) {
+            solicitacao.setPrioridade(dto.prioridade());
         }
 
         return SolicitacaoDTO.from(solicitacaoRepository.save(solicitacao));
