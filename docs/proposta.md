@@ -68,7 +68,7 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
 
 ## 5. Acordo de Processo
 
-* **Cadência de Sprints:** O projeto será executado em **4 Sprints de 1 semana cada**, iniciando às segundas-feiras e finalizando aos domingos.
+* **Cadência de Sprints:** O projeto será executado em **3 Sprints de 1 semana cada**, iniciando às segundas-feiras e finalizando aos domingos.
 * **Cerimônias do Scrum:**
   * **Sprint Planning:** Segundas-feiras, às 19h00 (Duração: 45 min). Planejamento das metas, seleção de histórias do Backlog e alocação.
   * **Daily Sync:** Terça a Sexta-feira, às 12h00 (Duração: 10 min, assíncrono via grupo da equipe). Cada integrante reporta: o que fez, o que fará e se há bloqueios.
@@ -86,8 +86,8 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
   *(Em caso de ausência de um membro por mais de 24h, qualquer outro desenvolvedor assume a revisão para não bloquear o fluxo).*
 * **Limites de Trabalho em Progresso (WIP Limits):**
   * *Sprint Backlog:* Contém os itens selecionados para a sprint corrente.
-  * *Em Progresso:* Máximo de **2 tarefas por desenvolvedor** (limite global: 6 tarefas).
-  * *Em Revisão (Code Review):* Máximo de **3 tarefas simultâneas** para toda a equipe.
+  * *Em Progresso:* Máximo de **5 tarefas por desenvolvedor** (limite global: 6 tarefas).
+  * *Em Revisão (Code Review):* Máximo de **5 tarefas simultâneas** para toda a equipe.
 * **Ferramentas Adotadas:**
   * **Gestão e Versionamento:** GitHub (Repositório, GitHub Projects com Kanban, Issues e Pull Requests).
   * **Comunicação:** Discord (reuniões síncronas) e WhatsApp (Daily assíncrona e avisos operacionais).
@@ -112,3 +112,4 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
 * **Integração com outras disciplinas:** Não há integração; trata-se de projeto exclusivo para DIM0510.
 * **Quadro Kanban (GitHub Projects):** [https://github.com/users/palmiery/projects/10](https://github.com/users/palmiery/projects/10)
 * **Vídeo de Apresentação (Sprint 0 - ~5 min):** *([https://drive.google.com/file/d/1xyWuTEPhsBFx8A9Q8vdMAbQfeu0ffisO/view?usp=sharing])*
+* **Vídeo de Apresentação (Sprint 1- ~5 min):***([])*
