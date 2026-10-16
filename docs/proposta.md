@@ -112,4 +112,4 @@ Em instituições acadêmicas e prediais com múltiplos blocos, salas de aula e 
 * **Integração com outras disciplinas:** Não há integração; trata-se de projeto exclusivo para DIM0510.
 * **Quadro Kanban (GitHub Projects):** [https://github.com/users/palmiery/projects/10](https://github.com/users/palmiery/projects/10)
 * **Vídeo de Apresentação (Sprint 0 - ~5 min):** *([https://drive.google.com/file/d/1xyWuTEPhsBFx8A9Q8vdMAbQfeu0ffisO/view?usp=sharing])*
-* **Vídeo de Apresentação (Sprint 1- ~5 min):***([])*
+* **Vídeo de Apresentação (Sprint 1- ~5 min):***([https://drive.google.com/file/d/1PpU1KvrZdvxzb_to7XDu38sT94b7hbza/view?usp=drive_link])*
