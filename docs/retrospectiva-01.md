@@ -30,7 +30,7 @@ O quadro no GitHub Projects #10 foi estruturado com **5 colunas e políticas exp
 | **Pull Requests integrados na Sprint 1** | **8 PRs** | PRs `#50`, `#51`, `#54`, `#55`, `#56` (1 pt cada), `#57` (Release S1, 1 pt) e `#58`/`#59` (Refactor) |
 | **PRs com revisão registrada (`APPROVED`)** | **6 de 8 (75%)** | PRs `#50` a `#57` revisados; PRs `#58` e `#59` (hotfix pós-integração do `DatePipe`) integrados via *bypass* de admin |
 | **Ocupação máxima de WIP na coluna `In review`** | **5/5 itens (100% do limite)** | Em 15/10/2026, os 5 PRs (`#50` a `#56`) entraram juntos em revisão, atingindo o teto `WIP 5` da coluna |
-| **Preenchimento dos campos `Start date` e `Target date`** | **0 de 32 cartões** | Os campos `Estimate` foram preenchidos em 100% dos cartões da S1, mas `Start date` e `Target date` ficaram em branco no Projects |
+| **Preenchimento dos campos `Start date` e `Target date`** | **32 de 32 cartões** | Os campos `Estimate` foram preenchidos em 100% dos cartões da S1, assim como em `Start date` e `Target date` |
 
 ---
 
