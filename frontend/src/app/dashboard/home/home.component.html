@@ -61,7 +61,7 @@
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
       <div class="flex flex-wrap items-center gap-3">
         <span class="text-sm font-medium text-slate-700">Filtrar por:</span>
-        
+
         <!-- Filtro Status -->
         <select
           [ngModel]="filtroStatus()"
@@ -97,9 +97,7 @@
         }
       </div>
 
-      <div class="text-xs text-slate-400">
-        Exibindo {{ recentes().length }} solicitação(ões)
-      </div>
+      <div class="text-xs text-slate-400">Exibindo {{ recentes().length }} solicitação(ões)</div>
     </div>
   </div>
 
@@ -123,7 +121,9 @@
       <div class="flex flex-col items-center justify-center py-12 text-center">
         <span class="text-4xl mb-3">📋</span>
         <p class="text-slate-500 font-medium">Nenhuma solicitação encontrada</p>
-        <p class="text-slate-400 text-sm mt-1">Tente ajustar os filtros ou crie uma nova solicitação.</p>
+        <p class="text-slate-400 text-sm mt-1">
+          Tente ajustar os filtros ou crie uma nova solicitação.
+        </p>
         <a
           routerLink="/nova-solicitacao"
           class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors"
@@ -134,15 +134,24 @@
     } @else {
       <div class="divide-y divide-slate-100">
         @for (item of recentes(); track item.id) {
-          <div class="px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50 transition-colors">
+          <div
+            class="px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
+          >
             <div class="flex items-start gap-4">
               <span class="text-xs text-slate-400 font-mono mt-0.5">#{{ item.id }}</span>
               <div>
                 <p class="text-sm font-medium text-slate-800">{{ item.titulo }}</p>
                 <p class="text-xs text-slate-500 mt-0.5">
-                  Sala: <span class="font-medium text-slate-700">{{ item.salaNome ?? 'Não vinculada' }}</span> • 
-                  Equipamento: <span class="font-medium text-slate-700">{{ item.equipamentoNome ?? 'Nenhum' }}</span> • 
-                  Solicitante: <span class="font-medium text-slate-700">{{ item.solicitanteNome }}</span>
+                  Sala:
+                  <span class="font-medium text-slate-700">{{
+                    item.salaNome ?? 'Não vinculada'
+                  }}</span>
+                  • Equipamento:
+                  <span class="font-medium text-slate-700">{{
+                    item.equipamentoNome ?? 'Nenhum'
+                  }}</span>
+                  • Solicitante:
+                  <span class="font-medium text-slate-700">{{ item.solicitanteNome }}</span>
                 </p>
                 <p class="text-xs text-slate-400 mt-1 line-clamp-1">{{ item.descricao }}</p>
               </div>
@@ -154,7 +163,8 @@
                 [ngClass]="{
                   'bg-green-100 text-green-700': item.prioridade === 'BAIXA',
                   'bg-yellow-100 text-yellow-700': item.prioridade === 'MEDIA',
-                  'bg-red-100 text-red-700': item.prioridade === 'ALTA' || item.prioridade === 'URGENTE'
+                  'bg-red-100 text-red-700':
+                    item.prioridade === 'ALTA' || item.prioridade === 'URGENTE',
                 }"
               >
                 {{ item.prioridade }}

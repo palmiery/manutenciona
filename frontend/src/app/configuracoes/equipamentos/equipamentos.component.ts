@@ -32,8 +32,14 @@ export class EquipamentosComponent implements OnInit {
   load() {
     this.loading.set(true);
     this.equipamentoService.getAll().subscribe({
-      next: (data) => { this.equipamentos.set(data); this.loading.set(false); },
-      error: () => { this.equipamentos.set([]); this.loading.set(false); },
+      next: (data) => {
+        this.equipamentos.set(data);
+        this.loading.set(false);
+      },
+      error: () => {
+        this.equipamentos.set([]);
+        this.loading.set(false);
+      },
     });
   }
 
@@ -44,7 +50,12 @@ export class EquipamentosComponent implements OnInit {
   }
 
   openEdit(eq: Equipamento) {
-    this.form = { nome: eq.nome, descricao: eq.descricao, numeroSerie: eq.numeroSerie, salaId: eq.salaId };
+    this.form = {
+      nome: eq.nome,
+      descricao: eq.descricao,
+      numeroSerie: eq.numeroSerie,
+      salaId: eq.salaId,
+    };
     this.editingId.set(eq.id);
     this.showForm.set(true);
   }
@@ -58,22 +69,32 @@ export class EquipamentosComponent implements OnInit {
     const obs = id
       ? this.equipamentoService.update(id, this.form)
       : this.equipamentoService.create(this.form);
-    obs.subscribe({ next: () => { this.showForm.set(false); this.load(); }, error: (e) => console.error(e) });
+    obs.subscribe({
+      next: () => {
+        this.showForm.set(false);
+        this.load();
+      },
+      error: (e) => console.error(e),
+    });
   }
 
   delete(id: number) {
-      if (confirm('Deseja remover este equipamento?')) {
-        this.equipamentoService.delete(id).subscribe({
-          next: () => {
-            this.load();
-          },
-          error: (err) => {
-            console.error('Erro ao excluir equipamento:', err);
-            alert('Não foi possível remover o equipamento. Verifique se ele não possui solicitações vinculadas.');
-          }
-        });
-      }
+    if (confirm('Deseja remover este equipamento?')) {
+      this.equipamentoService.delete(id).subscribe({
+        next: () => {
+          this.load();
+        },
+        error: (err) => {
+          console.error('Erro ao excluir equipamento:', err);
+          alert(
+            'Não foi possível remover o equipamento. Verifique se ele não possui solicitações vinculadas.',
+          );
+        },
+      });
     }
+  }
 
-  cancel() { this.showForm.set(false); }
+  cancel() {
+    this.showForm.set(false);
+  }
 }

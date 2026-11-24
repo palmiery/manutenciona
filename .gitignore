@@ -7,7 +7,8 @@ frontend/.idea/
 
 # Java / Maven / Spring Boot
 backend/target/
-backend/.mvn/
+backend/.mvn/*
+!backend/.mvn/wrapper/
 backend/*.log
 backend/.vscode/
 backend/.idea/

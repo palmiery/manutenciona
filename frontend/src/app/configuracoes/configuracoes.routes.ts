@@ -9,8 +9,7 @@ export const configuracoesRoutes: Routes = [
       { path: '', redirectTo: 'salas', pathMatch: 'full' },
       {
         path: 'salas',
-        loadComponent: () =>
-          import('./salas/salas.component').then((m) => m.SalasComponent),
+        loadComponent: () => import('./salas/salas.component').then((m) => m.SalasComponent),
       },
       {
         path: 'equipamentos',

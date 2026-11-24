@@ -80,7 +80,9 @@ export class NovaSolicitacaoComponent implements OnInit {
       },
       error: (err) => {
         this.loading.set(false);
-        this.errorMessage.set(err?.error?.message ?? 'Erro ao enviar a solicitação. Verifique os dados.');
+        this.errorMessage.set(
+          err?.error?.message ?? 'Erro ao enviar a solicitação. Verifique os dados.',
+        );
       },
     });
   }

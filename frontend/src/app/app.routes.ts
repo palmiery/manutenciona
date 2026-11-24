@@ -4,8 +4,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'dashboard',
-    loadChildren: () =>
-      import('./dashboard/dashboard.routes').then((m) => m.dashboardRoutes),
+    loadChildren: () => import('./dashboard/dashboard.routes').then((m) => m.dashboardRoutes),
   },
   {
     path: 'configuracoes',
@@ -16,7 +15,7 @@ export const routes: Routes = [
     path: 'nova-solicitacao',
     loadComponent: () =>
       import('./public/nova-solicitacao/nova-solicitacao.component').then(
-        (m) => m.NovaSolicitacaoComponent
+        (m) => m.NovaSolicitacaoComponent,
       ),
   },
   { path: '**', redirectTo: 'dashboard' },

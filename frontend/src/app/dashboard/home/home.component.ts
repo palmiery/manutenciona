@@ -4,7 +4,12 @@ import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SolicitacaoService } from '../../core/services/solicitacao.service';
 import { SalaService } from '../../core/services/sala.service';
-import { Solicitacao, DashboardStats, StatusSolicitacao, PrioridadeSolicitacao } from '../../core/models/solicitacao.model';
+import {
+  Solicitacao,
+  DashboardStats,
+  StatusSolicitacao,
+  PrioridadeSolicitacao,
+} from '../../core/models/solicitacao.model';
 import { Sala } from '../../core/models/sala.model';
 import { BadgeStatusComponent } from '../../shared/components/badge-status/badge-status.component';
 
@@ -91,20 +96,22 @@ export class HomeComponent implements OnInit {
     if (!item) return;
 
     this.savingEdit.set(true);
-    this.solicitacaoService.updateStatus(item.id, this.novoStatus(), this.novaPrioridade()).subscribe({
-      next: () => {
-        this.savingEdit.set(false);
-        this.closeQuickEdit();
-        // US01: atualiza contadores do dashboard
-        this.loadDashboardStats();
-        // US05: reaplica filtros ativos
-        this.aplicarFiltros();
-      },
-      error: (err) => {
-        this.savingEdit.set(false);
-        console.error('Erro ao atualizar solicitação:', err);
-        alert('Não foi possível atualizar a solicitação.');
-      },
-    });
+    this.solicitacaoService
+      .updateStatus(item.id, this.novoStatus(), this.novaPrioridade())
+      .subscribe({
+        next: () => {
+          this.savingEdit.set(false);
+          this.closeQuickEdit();
+          // US01: atualiza contadores do dashboard
+          this.loadDashboardStats();
+          // US05: reaplica filtros ativos
+          this.aplicarFiltros();
+        },
+        error: (err) => {
+          this.savingEdit.set(false);
+          console.error('Erro ao atualizar solicitação:', err);
+          alert('Não foi possível atualizar a solicitação.');
+        },
+      });
   }
 }
