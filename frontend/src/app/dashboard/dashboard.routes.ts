@@ -9,8 +9,7 @@ export const dashboardRoutes: Routes = [
       { path: '', redirectTo: 'inicio', pathMatch: 'full' },
       {
         path: 'inicio',
-        loadComponent: () =>
-          import('./home/home.component').then((m) => m.HomeComponent),
+        loadComponent: () => import('./home/home.component').then((m) => m.HomeComponent),
       },
     ],
   },

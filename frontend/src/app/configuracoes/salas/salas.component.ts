@@ -27,8 +27,14 @@ export class SalasComponent implements OnInit {
   load() {
     this.loading.set(true);
     this.salaService.getAll().subscribe({
-      next: (data) => { this.salas.set(data); this.loading.set(false); },
-      error: () => { this.salas.set([]); this.loading.set(false); },
+      next: (data) => {
+        this.salas.set(data);
+        this.loading.set(false);
+      },
+      error: () => {
+        this.salas.set([]);
+        this.loading.set(false);
+      },
     });
   }
 
@@ -46,12 +52,13 @@ export class SalasComponent implements OnInit {
 
   save() {
     const id = this.editingId();
-    const obs = id
-      ? this.salaService.update(id, this.form)
-      : this.salaService.create(this.form);
+    const obs = id ? this.salaService.update(id, this.form) : this.salaService.create(this.form);
 
     obs.subscribe({
-      next: () => { this.showForm.set(false); this.load(); },
+      next: () => {
+        this.showForm.set(false);
+        this.load();
+      },
       error: (err) => console.error(err),
     });
   }

@@ -13,6 +13,6 @@ export class SidebarComponent {
   configOpen = signal(false);
 
   toggleConfig() {
-    this.configOpen.update(v => !v);
+    this.configOpen.update((v) => !v);
   }
 }
